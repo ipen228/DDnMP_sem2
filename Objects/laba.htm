@@ -1,0 +1,50 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+<title>Static Call Graph - [.\Objects\laba.axf]</title></head>
+<body><HR>
+<H1>Static Call Graph for image .\Objects\laba.axf</H1><HR>
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Oct 19 10:10:19 2021
+<BR><P>
+<H3>Maximum Stack Usage =          0 bytes + Unknown(Untraceable Function Pointers)</H3><H3>
+Call chain for Maximum Stack Depth:</H3>
+
+<P>
+<H3>
+Function Pointers
+</H3><UL>
+ <LI><a href="#[1]">startup</a> from startup.o(RESET) referenced from startup.o(RESET)
+</UL>
+<P>
+<H3>
+Global Symbols
+</H3><P>
+<H3>
+Local Symbols
+</H3>
+<P><STRONG><a name="[2]"></a>main</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, startup.o(MAIN), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;min_find
+<LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;var13
+</UL>
+
+<P><STRONG><a name="[3]"></a>var13</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, startup.o(MAIN), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mas_cpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[4]"></a>min_find</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, startup.o(MAIN), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;min_find
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;min_find
+<LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[5]"></a>mas_cpy</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, startup.o(MAIN), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;var13
+</UL>
+
+<P><STRONG><a name="[1]"></a>startup</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, startup.o(RESET))
+<P>
+<H3>
+Undefined Global Symbols
+</H3><HR></body></html>
