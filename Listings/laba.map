@@ -4,22 +4,22 @@ Component: ARM Compiler 5.06 update 7 (build 960) Tool: armlink [4d3601]
 
 Section Cross References
 
-    startup.o(MAIN) refers to startup.o(CONSTANT_FLASH) for mas
-    startup.o(MAIN) refers to startup.o(VERIABLE_RAM) for result
+    startup.o(MAIN) refers to startup.o(CONSTANT_FLASH) for mas1
+    startup.o(MAIN) refers to startup.o(VERIABLE_RAM) for result1
     startup.o(RESET) refers to startup.o(MAIN) for main
-    main.o(MAIN) refers to main.o(CONSTANT_FLASH) for mas
-    main.o(MAIN) refers to main.o(VERIABLE_RAM) for result
+    main.o(MAIN) refers to main.o(CONSTANT_FLASH) for mas1
+    main.o(MAIN) refers to main.o(VERIABLE_RAM) for result1
 
 
 ==============================================================================
 
 Removing Unused input sections from the image.
 
-    Removing main.o(CONSTANT_FLASH), (10 bytes).
-    Removing main.o(VERIABLE_RAM), (36 bytes).
-    Removing main.o(MAIN), (148 bytes).
+    Removing main.o(CONSTANT_FLASH), (40 bytes).
+    Removing main.o(VERIABLE_RAM), (64 bytes).
+    Removing main.o(MAIN), (260 bytes).
 
-3 unused section(s) (total 194 bytes) removed from the image.
+3 unused section(s) (total 364 bytes) removed from the image.
 
 ==============================================================================
 
@@ -34,15 +34,21 @@ Image Symbol Table
     stm32_EQU.s                              0x00000000   Number         0  stm32_equ.o ABSOLUTE
     RESET                                    0x08000000   Section       12  startup.o(RESET)
     startup                                  0x08000009   Thumb Code     4  startup.o(RESET)
-    MAIN                                     0x0800000c   Section      148  startup.o(MAIN)
-    main                                     0x0800000d   Thumb Code    30  startup.o(MAIN)
-    var13                                    0x0800002b   Thumb Code    18  startup.o(MAIN)
-    min_find                                 0x0800003d   Thumb Code    68  startup.o(MAIN)
-    mas_cpy                                  0x08000081   Thumb Code    24  startup.o(MAIN)
-    CONSTANT_FLASH                           0x080000a0   Section       10  startup.o(CONSTANT_FLASH)
-    mas                                      0x080000a0   Data          10  startup.o(CONSTANT_FLASH)
-    VERIABLE_RAM                             0x20000000   Section       36  startup.o(VERIABLE_RAM)
-    result                                   0x20000000   Data          36  startup.o(VERIABLE_RAM)
+    MAIN                                     0x0800000c   Section      260  startup.o(MAIN)
+    main                                     0x0800000d   Thumb Code   106  startup.o(MAIN)
+    var13                                    0x08000077   Thumb Code    18  startup.o(MAIN)
+    min_find                                 0x08000089   Thumb Code    80  startup.o(MAIN)
+    mas_cpy                                  0x080000d9   Thumb Code    24  startup.o(MAIN)
+    CONSTANT_FLASH                           0x08000110   Section       40  startup.o(CONSTANT_FLASH)
+    mas1                                     0x08000110   Data          10  startup.o(CONSTANT_FLASH)
+    mas2                                     0x0800011a   Data          10  startup.o(CONSTANT_FLASH)
+    mas3                                     0x08000124   Data          10  startup.o(CONSTANT_FLASH)
+    mas4                                     0x0800012e   Data          10  startup.o(CONSTANT_FLASH)
+    VERIABLE_RAM                             0x20000000   Section       64  startup.o(VERIABLE_RAM)
+    result1                                  0x20000000   Data          16  startup.o(VERIABLE_RAM)
+    result2                                  0x20000010   Data          16  startup.o(VERIABLE_RAM)
+    result3                                  0x20000020   Data          16  startup.o(VERIABLE_RAM)
+    result4                                  0x20000030   Data          16  startup.o(VERIABLE_RAM)
 
     Global Symbols
 
@@ -58,22 +64,22 @@ Memory Map of the image
 
   Image Entry point : 0x08000009
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000000d0, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00000178, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000000ac, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000138, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x0000000c   Code   RO            4  * RESET               startup.o
-    0x0800000c   0x0800000c   0x00000094   Code   RO            3    MAIN                startup.o
-    0x080000a0   0x080000a0   0x0000000a   Data   RO            1    CONSTANT_FLASH      startup.o
+    0x0800000c   0x0800000c   0x00000104   Code   RO            3    MAIN                startup.o
+    0x08000110   0x08000110   0x00000028   Data   RO            1    CONSTANT_FLASH      startup.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080000ac, Size: 0x00000024, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08000138, Size: 0x00000040, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080000ac   0x00000024   Data   RW            2    VERIABLE_RAM        startup.o
+    0x20000000   0x08000138   0x00000040   Data   RW            2    VERIABLE_RAM        startup.o
 
 
 ==============================================================================
@@ -83,12 +89,12 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       160         16         10         36          0        772   startup.o
+       272         40         40         64          0        796   startup.o
 
     ----------------------------------------------------------------------
-       160         16         12         36          0        772   Object Totals
+       272         40         40         64          0        796   Object Totals
          0          0          0          0          0          0   (incl. Generated)
-         0          0          2          0          0          0   (incl. Padding)
+         0          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
          0          0          0          0          0          0   Library Totals
@@ -101,15 +107,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-       160         16         12         36          0        720   Grand Totals
-       160         16         12         36          0        720   ELF Image Totals
-       160         16         12         36          0          0   ROM Totals
+       272         40         40         64          0        744   Grand Totals
+       272         40         40         64          0        744   ELF Image Totals
+       272         40         40         64          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                  172 (   0.17kB)
-    Total RW  Size (RW Data + ZI Data)                36 (   0.04kB)
-    Total ROM Size (Code + RO Data + RW Data)        208 (   0.20kB)
+    Total RO  Size (Code + RO Data)                  312 (   0.30kB)
+    Total RW  Size (RW Data + ZI Data)                64 (   0.06kB)
+    Total ROM Size (Code + RO Data + RW Data)        376 (   0.37kB)
 
 ==============================================================================
 
