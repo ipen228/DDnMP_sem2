@@ -1,0 +1,60 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         
+    2 00000000         ; Определение макроподстаново�
+                       �
+    3 00000000         
+    4 00000000 20000000 
+                       STACK   EQU              0x20000000  ;адрес сте�
+                                                            �а
+    5 00000000 00000500 
+                       STACK_SIZE
+                               EQU              0x500       ; размер ст
+                                                            эка
+    6 00000000 20000500 
+                       STACK_TOP
+                               EQU              STACK+STACK_SIZE ;вершин�
+                                                            � стека
+    7 00000000         
+    8 00000000                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\object
+s\stm32_equ.d -o.\objects\stm32_equ.o -I"H:\CUMP\Yurev Pavel\����� �����\RTE" -
+IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include -IC:\Keil_v5\ARM\C
+MSIS\Include --predefine="__EVAL SETA 1" --predefine="STM32F10X_MD SETA 1" --li
+st=.\listings\stm32_equ.lst stm32_EQU.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+STACK 20000000
+
+Symbol: STACK
+   Definitions
+      At line 4 in file stm32_EQU.s
+   Uses
+      At line 6 in file stm32_EQU.s
+Comment: STACK used once
+STACK_SIZE 00000500
+
+Symbol: STACK_SIZE
+   Definitions
+      At line 5 in file stm32_EQU.s
+   Uses
+      At line 6 in file stm32_EQU.s
+Comment: STACK_SIZE used once
+STACK_TOP 20000500
+
+Symbol: STACK_TOP
+   Definitions
+      At line 6 in file stm32_EQU.s
+   Uses
+      None
+Comment: STACK_TOP unused
+3 symbols
+335 symbols in table
